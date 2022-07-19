@@ -1,17 +1,14 @@
 import React from "react";
 
 function Item({ item, onUpdateItem, onDeleteItem}) {
- 
   function handleDeleteClick() {
-    //console.log(item);
-
+    //console.log(item
   fetch(`http://localhost:4000/items/${item.id}`, {
     method: "DELETE",
   })
     .then((r) => r.json())
     .then(() => onDeleteItem(item));
 } 
-  
 
   function handleAddToCartClick() {
     // Call onUpdateItem, passing the data returned from the fetch request
@@ -38,7 +35,7 @@ function Item({ item, onUpdateItem, onDeleteItem}) {
       >
         {item.isInCart ? "Remove From" : "Add to"} Cart
       </button>
-      <button className="remove" onClick = {handleDeleteClick}>
+      <button className="remove" onClick = {handleDeleteClick}>Delete
       </button>
     </li>
   );
